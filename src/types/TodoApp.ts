@@ -19,7 +19,7 @@ export class TodoApp {
       event.preventDefault();
 
       if (nameInput.value.trim()) {
-        let newTodo = this.todoService.addTodo(this.todoService.generateId(), nameInput.value.trim());
+        let newTodo = this.todoService.addTodo(nameInput.value.trim());
         list.innerHTML += this.renderItem(newTodo.id, newTodo.name, newTodo.state);
 
         form.reset();
@@ -35,7 +35,7 @@ export class TodoApp {
         let todoItem = input.nextElementSibling;
         let id = input.getAttribute('data-id');
 
-        this.todoService.completeTodo(parseInt(id));
+        this.todoService.completeTodo(id);
         todoItem.classList.toggle('complete');        
       }
     })
@@ -47,7 +47,7 @@ export class TodoApp {
         let todoItem = removeBtn.parentElement;
         let id = removeBtn.getAttribute('data-id');
 
-        this.todoService.removeTodo(parseInt(id));
+        this.todoService.removeTodo(id);
         todoItem.parentNode.removeChild(todoItem);    
       }
     })
@@ -63,7 +63,7 @@ export class TodoApp {
           input.focus();
           return false;
         }
-        let editTodo = this.todoService.editTodo(parseInt(id), input.textContent.trim())
+        let editTodo = this.todoService.editTodo(id, input.textContent.trim())
         input.textContent = editTodo.name;
       }
     })
@@ -80,7 +80,7 @@ export class TodoApp {
   }
 
   // create template todo item
-  renderItem(id: number, name: string, state:State): string {
+  renderItem(id: string, name: string, state:State): string {
     let checked = state === 1 ? '' : 'checked';
     let completeClass = state === 1 ? '' : 'complete'; 
     let item =

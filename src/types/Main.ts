@@ -1,16 +1,17 @@
 import { TodoApp } from './TodoApp';
+import Utils from './Utils';
 
 let todos = [{
-    id: 1,
+    id: Utils.genId(),
     name: 'Basic Design',
     state: 2
   }, {
-    id: 2,
+    id: Utils.genId(),
     name: 'Function Design',
     state: 1
   },
   {
-    id: 3,
+    id: Utils.genId(),
     name: 'Make Code',
     state: 1
   }
