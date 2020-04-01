@@ -1,0 +1,25 @@
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+#todo-item {
+  display: inline-block;
+}
+
+#remove {
+  cursor: pointer;
+}
+
+#remove:hover {
+  font-weight: bold;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
