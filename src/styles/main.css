@@ -7,12 +7,9 @@ h1 {
   text-align: center;
 }
 
-#todo-item {
-  display: inline-block;
-}
-
 #remove {
   cursor: pointer;
+  color: red;
 }
 
 #remove:hover {
@@ -22,4 +19,26 @@ h1 {
 .complete {
   text-decoration: line-through;
   opacity: 0.7;
+}
+
+#name {
+  width: 300px;
+  border-radius: 3px;
+}
+
+#todo-form {
+  text-align: center;
+}
+
+.todo-group {
+  margin-left: 110px;
+}
+
+.todo-item {
+  display: inline-block;
+}
+
+#todos {
+  list-style: none;
+  padding-left: 20px;
 }
